@@ -29,8 +29,8 @@ movies.search('Batman Begins', function(err, results) {
 });
 
 var id = '10598';
-movies.get(id, function(err, movie) {
-  // movie: an Object with movie metadata
+movies.get(id, function(err, result) {
+  // result: an Object with movie metadata
 });
 
 ```

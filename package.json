@@ -1,7 +1,7 @@
 {
   "name": "tomatoes",
   "version": "0.0.1",
-  "description": "Simple interface with the rotten tomatoes API",
+  "description": "Simple interface for the rotten tomatoes API",
   "keywords": ["rotten tomatoes", "movies", "ratings"],
   "author": "Hunter Loftis <hunter@hunterloftis.com>",
   "repository": { "type": "git", "url": "git@github.com:Skookum/tomatoes.git" },
