@@ -7,12 +7,12 @@ Summary of its purpose.
 
 ## Installation
 
-```shell
+```
   $ npm install moduleName
 ```
 
 ## Tests
 
-```shell
+```
   $ make test
 ```
