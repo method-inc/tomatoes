@@ -1,9 +1,37 @@
 var http = require('http');
 var qs = require('querystring');
 
+module.exports = function tomatoes(key) {
+  return new Tomato(key);
+};
+
 function Tomato(key) {
   this.key = key;
 }
+
+Tomato.prototype.search = function(title, done) {
+  var options = {
+    base: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?',
+    params: {
+      q: title,
+      apikey: this.key
+    }
+  };
+  return this._request(options, function(err, obj) {
+    var result = obj || [];
+    return done(err, obj);
+  });
+};
+
+Tomato.prototype.get = function(id, done) {
+  var options = {
+    base: 'http://api.rottentomatoes.com/api/public/v1.0/movies/' + id + '.json?',
+    params: {
+      apikey: this.key
+    }
+  };
+  return this._request(options, done);
+};
 
 Tomato.prototype._request = function(options, done) {
   var data = '';
@@ -28,26 +56,4 @@ Tomato.prototype._request = function(options, done) {
     }
     return done(err, obj);
   }
-};
-
-Tomato.prototype.search = function(title, done) {
-  var options = {
-    base: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?',
-    params: {
-      q: title,
-      apikey: this.key
-    }
-  };
-  return this._request(options, function(err, obj) {
-    var result = obj || [];
-    return done(err, obj);
-  });
-};
-
-Tomato.prototype.get = function(id, done) {
-
-};
-
-module.exports = function tomatoes(key) {
-  return new Tomato(key);
 };
