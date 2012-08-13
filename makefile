@@ -2,7 +2,7 @@ setup:
 	npm install
 
 test:
-	NODE_ENV='test' node_modules/.bin/mocha -R list test/*.test.js
+	NODE_ENV='test' node_modules/.bin/mocha -R list -t 4000 test/*.test.js
 
 publish: test
 	git push github master

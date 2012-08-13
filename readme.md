@@ -22,13 +22,14 @@ Summary of its purpose.
 ```js
 
 var tomatoes = require('tomatoes');
+var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');
 
-tomatoes.search('Batman Begins', function(err, movies) {
-  // movies: an Array of Objects with movie metadata
+movies.search('Batman Begins', function(err, results) {
+  // results: an Array of Objects with movie metadata
 });
 
 var id = '10598';
-tomatoes.get(id, function(err, movie) {
+movies.get(id, function(err, movie) {
   // movie: an Object with movie metadata
 });
 
