@@ -30,7 +30,10 @@ Tomato.prototype.get = function(id, done) {
       apikey: this.key
     }
   };
-  return this._request(options, done);
+  return this._request(options, function(err, obj) {
+    var result = obj.id ? obj : undefined;
+    return done(err, result);
+  });
 };
 
 Tomato.prototype._request = function(options, done) {

@@ -4,7 +4,7 @@ var tomatoes = require('..');
 var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');
 
 var DIRECT = {
-  id: 10598,
+  id: '10598',
   title: 'Batman Returns',
   ratings: {
     critics_rating: 'Certified Fresh',

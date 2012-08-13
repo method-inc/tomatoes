@@ -4,7 +4,7 @@ var tomatoes = require('..');
 var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');
 
 var DIRECT = {
-  id: 10598,
+  id: '10598',
   title: 'Batman Returns',
   ratings: {
     critics_rating: 'Certified Fresh',
@@ -20,7 +20,7 @@ describe('get()', function() {
       movies.get(DIRECT.id, function(err, result) {
         should.not.exist(err, 'err exists');
         should.exist(result, 'result does not exist');
-        result.id.should.eql(DIRECT.id);
+        result.id.should.eql(parseInt(DIRECT.id, 10));  // RT sends some ids as Strings and some as Integers
         result.title.should.eql(DIRECT.title);
         result.ratings.should.eql(DIRECT.ratings);
         return done();
@@ -29,7 +29,11 @@ describe('get()', function() {
   });
   describe('without a match', function() {
     it('should return undefined', function(done) {
-      return done();
+      movies.get('xxxxx', function(err, result) {
+        should.not.exist(err);
+        should.not.exist(result);
+        return done();
+      });
     });
   });
 });
