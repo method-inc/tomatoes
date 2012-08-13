@@ -1,0 +1,21 @@
+{
+  "name": "moduleName",
+  "version": "0.0.1",
+  "description": "npm module boilerplate",
+  "keywords": ["npm", "demo", "example", "charlottejs"],
+  "author": "Hunter Loftis <hunter@hunterloftis.com>",
+  "repository": { "type": "git", "url": "git@github.com:Skookum/npm-boilerplate.git" },
+  "main": "./index",
+  "bin": { "demo_cli": "./bin/demo_cli" },
+  "engines": { "node": ">= 0.6.x < 0.8.0" },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
+}
