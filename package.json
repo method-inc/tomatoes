@@ -1,12 +1,11 @@
 {
-  "name": "moduleName",
+  "name": "tomatoes",
   "version": "0.0.1",
-  "description": "npm module boilerplate",
-  "keywords": ["npm", "demo", "example", "charlottejs"],
+  "description": "Simple interface with the rotten tomatoes API",
+  "keywords": ["rotten tomatoes", "movies", "ratings"],
   "author": "Hunter Loftis <hunter@hunterloftis.com>",
-  "repository": { "type": "git", "url": "git@github.com:Skookum/npm-boilerplate.git" },
+  "repository": { "type": "git", "url": "git@github.com:Skookum/tomatoes.git" },
   "main": "./index",
-  "bin": { "demo_cli": "./bin/demo_cli" },
   "engines": { "node": ">= 0.6.x < 0.8.0" },
   "scripts": {
     "test": "make test"

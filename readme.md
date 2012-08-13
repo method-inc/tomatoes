@@ -16,3 +16,20 @@ Summary of its purpose.
 ```
   $ make test
 ```
+
+## Use
+
+```js
+
+var tomatoes = require('tomatoes');
+
+tomatoes.search('Batman Begins', function(err, movies) {
+  // movies: an Array of Objects with movie metadata
+});
+
+var id = '10598';
+tomatoes.get(id, function(err, movie) {
+  // movie: an Object with movie metadata
+});
+
+```
