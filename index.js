@@ -18,8 +18,8 @@ Tomato.prototype.search = function(title, done) {
     }
   };
   return this._request(options, function(err, obj) {
-    var result = obj || [];
-    return done(err, obj);
+    var result = obj.movies || [];
+    return done(err, result);
   });
 };
 
@@ -52,7 +52,7 @@ Tomato.prototype._request = function(options, done) {
   function onEnd(err) {
     var obj;
     if (data.length) {
-      obj = JSON.parse(data).movies;
+      obj = JSON.parse(data);
     }
     return done(err, obj);
   }

@@ -14,7 +14,7 @@ var DIRECT = {
   }
 };
 
-describe('search', function() {
+describe('search()', function() {
   describe('with a direct match', function() {
     it('should return the match', function(done) {
       movies.search('Batman Returns', function(err, results) {
