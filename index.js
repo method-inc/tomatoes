@@ -1,12 +1,18 @@
 var request = require('superagent');
 
+// Tomato factory
+
 module.exports = function tomatoes(key) {
   return new Tomato(key);
 };
 
+// Constructor
+
 function Tomato(key) {
   this.key = key;
 }
+
+// Search API
 
 Tomato.prototype.search = function(title, done) {
   request
@@ -21,6 +27,8 @@ Tomato.prototype.search = function(title, done) {
     });
 };
 
+// Get API
+
 Tomato.prototype.get = function(id, done) {
   request
     .get('http://api.rottentomatoes.com/api/public/v1.0/movies/' + id + '.json')
@@ -31,6 +39,8 @@ Tomato.prototype.get = function(id, done) {
       return done(err, result);
     });
 };
+
+// Utils
 
 function toJSON(str) {
   var result;
