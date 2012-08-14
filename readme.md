@@ -1,8 +1,6 @@
 # Tomatoes
 
 A simple node.js interface to the Rotten Tomatoes API.
-
-Implementing:
 - **search** (find movies from a title string search)
 - **get** (get a movie by ID)
 
