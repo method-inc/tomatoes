@@ -1,23 +1,27 @@
-# Module Name
+# Tomatoes
 
-Summary of its purpose.
+A simple node.js interface to the Rotten Tomatoes API.
 
-- Bullet points for clarity
-- Of how it works or why you might use it
+Implementing:
+- **search** (find movies from a title string search)
+- **get** (get a movie by ID)
 
-## Installation
+Movie data includes:
+- Title
+- Year
+- Synopsis
+- Actors
+- Ratings
+- Production summary
+- Similar movies
+
+## Installing
 
 ```
   $ npm install moduleName
 ```
 
-## Tests
-
-```
-  $ make test
-```
-
-## Use
+## Using
 
 ```js
 
@@ -33,4 +37,10 @@ movies.get(id, function(err, result) {
   // result: an Object with movie metadata
 });
 
+```
+
+## Testing
+
+```
+  $ make test
 ```
