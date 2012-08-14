@@ -14,6 +14,7 @@ Tomato.prototype.search = function(title, done) {
     base: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?',
     params: {
       q: title,
+      page_limit: 50,
       apikey: this.key
     }
   };

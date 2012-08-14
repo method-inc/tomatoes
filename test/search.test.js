@@ -31,7 +31,7 @@ describe('search()', function() {
     it('should return all matches', function(done) {
       movies.search('Batman', function(err, results) {
         should.not.exist(err);
-        results.should.have.length(30);
+        results.should.have.length(33);
         results[0].id.should.be.a('string');
         results[0].title.should.be.a('string');
         results[0].ratings.should.be.a('object');
