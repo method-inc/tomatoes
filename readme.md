@@ -1,6 +1,6 @@
 # Tomatoes
 
-A simple node.js interface to the Rotten Tomatoes API.
+A simple node.js interface to the [Rotten Tomatoes](http://www.rottentomatoes.com) API.
 - **search** (find movies from a title string search)
 - **get** (get a movie by ID)
 
