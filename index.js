@@ -1,5 +1,6 @@
 var http = require('http');
 var qs = require('querystring');
+var request = require('superagent');
 
 module.exports = function tomatoes(key) {
   return new Tomato(key);
@@ -25,17 +26,23 @@ Tomato.prototype.search = function(title, done) {
 };
 
 Tomato.prototype.get = function(id, done) {
-  var options = {
-    base: 'http://api.rottentomatoes.com/api/public/v1.0/movies/' + id + '.json?',
-    params: {
-      apikey: this.key
-    }
-  };
-  return this._request(options, function(err, obj) {
-    var result = obj.id ? obj : undefined;
-    return done(err, result);
-  });
+  request
+    .get('http://api.rottentomatoes.com/api/public/v1.0/movies/' + id + '.json')
+    .send({ apikey: this.key })
+    .end(function(err, res) {
+      var body = toJSON(res.text);
+      var result = body && body.id ? body : undefined;
+      return done(err, result);
+    });
 };
+
+function toJSON(str) {
+  var result;
+  try {
+    result = JSON.parse(str);
+  } catch (err) {}
+  return result;
+}
 
 Tomato.prototype._request = function(options, done) {
   var data = '';
