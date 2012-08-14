@@ -1,5 +1,4 @@
 var http = require('http');
-var qs = require('querystring');
 var request = require('superagent');
 
 module.exports = function tomatoes(key) {
