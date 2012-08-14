@@ -41,28 +41,3 @@ function toJSON(str) {
   } catch (err) {}
   return result;
 }
-
-Tomato.prototype._request = function(options, done) {
-  var data = '';
-  var base = options.base;
-  var query = qs.stringify(options.params);
-
-  http
-    .get(base + query, onResponse)
-    .on('error', onEnd);
-
-  function onResponse(res) {
-    res.on('data', onData);
-    res.on('end', onEnd);
-  }
-  function onData(chunk) {
-    data += chunk;
-  }
-  function onEnd(err) {
-    var obj;
-    if (data.length) {
-      obj = JSON.parse(data);
-    }
-    return done(err, obj);
-  }
-};
