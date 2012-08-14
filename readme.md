@@ -22,7 +22,7 @@ Summary of its purpose.
 ```js
 
 var tomatoes = require('tomatoes');
-var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');
+var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');  // API Key
 
 movies.search('Batman Begins', function(err, results) {
   // results: an Array of Objects with movie metadata
