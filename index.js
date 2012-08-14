@@ -1,4 +1,3 @@
-var http = require('http');
 var request = require('superagent');
 
 module.exports = function tomatoes(key) {
