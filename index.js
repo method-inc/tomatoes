@@ -11,18 +11,16 @@ function Tomato(key) {
 }
 
 Tomato.prototype.search = function(title, done) {
-  var options = {
-    base: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?',
-    params: {
-      q: title,
-      page_limit: 50,
-      apikey: this.key
-    }
-  };
-  return this._request(options, function(err, obj) {
-    var result = obj.movies || [];
-    return done(err, result);
-  });
+  request
+    .get('http://api.rottentomatoes.com/api/public/v1.0/movies.json')
+    .send({ q: title })
+    .send({ apikey: this.key })
+    .send({ page_limit: 50 })
+    .end(function(err, res) {
+      var body = toJSON(res.text);
+      var result = body && body.movies || [];
+      return done(err, result);
+    });
 };
 
 Tomato.prototype.get = function(id, done) {
