@@ -50,7 +50,7 @@ Tomato.prototype.getList = function(listType, listName, done) {
 	  .send({ apiKey: this.key })
 	  .end(function(err, res) {
 	    var body = toJSON(res.text);
-	    var result = body && body.id ? body : undefined;
+	    var result = body ? body : undefined;
 	    return done(err, result);
 	});
 };
