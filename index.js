@@ -46,13 +46,13 @@ Tomato.prototype.get = function(id, done) {
 
 Tomato.prototype.getList = function(listType, listName, done) {
 	request
-		.get('http://api.rottentomatoes.com/api/public/v1.0/lists/' + listType + '/' + listName + '.json')
-		.send({ apiKey: this.key })
-		.end(function(err, res) {
-			var body = toJSON(res.text);
-			var result = body && body.id ? body : undefined;
-			return done(err, result);
-		});
+	  .get('http://api.rottentomatoes.com/api/public/v1.0/lists/' + listType + '/' + listName + '.json')
+	  .send({ apiKey: this.key })
+	  .end(function(err, res) {
+	    var body = toJSON(res.text);
+	    var result = body && body.id ? body : undefined;
+	    return done(err, result);
+	});
 };
 
 // Utils
