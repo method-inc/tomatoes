@@ -37,3 +37,16 @@ describe('get()', function() {
     });
   });
 });
+
+describe('getList()', function() {
+  describe('for "movies" "in_theaters"', function() {
+    it ('should return the list', function(done) {
+      movies.getList('movies', 'in_theaters', function(err, result) {
+        result.total.should.be.a('number');
+        result.movies.should.have.length(16);
+        result.movies[0].title.should.be.a('string');
+        return done();
+      });
+    });
+  });
+});

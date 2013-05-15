@@ -45,14 +45,14 @@ Tomato.prototype.get = function(id, done) {
 // listName: box_office, in_theaters etc...
 
 Tomato.prototype.getList = function(listType, listName, done) {
-	request
-	  .get('http://api.rottentomatoes.com/api/public/v1.0/lists/' + listType + '/' + listName + '.json')
-	  .send({ apiKey: this.key })
-	  .end(function(err, res) {
-	    var body = toJSON(res.text);
-	    var result = body ? body : undefined;
-	    return done(err, result);
-	});
+  request
+    .get('http://api.rottentomatoes.com/api/public/v1.0/lists/' + listType + '/' + listName + '.json')
+    .send({ apiKey: this.key })
+    .end(function(err, res) {
+      var body = toJSON(res.text);
+      var result = body ? body : undefined;
+      return done(err, result);
+  });
 };
 
 // Utils
