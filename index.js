@@ -49,3 +49,4 @@ function toJSON(str) {
   } catch (err) {}
   return result;
 }
+

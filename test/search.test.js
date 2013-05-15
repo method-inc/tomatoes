@@ -8,7 +8,7 @@ var DIRECT = {
   title: 'Batman Returns',
   ratings: {
     critics_rating: 'Certified Fresh',
-    critics_score: 78,
+    critics_score: 81,
     audience_rating: 'Upright',
     audience_score: 68
   }
@@ -19,7 +19,7 @@ describe('search()', function() {
     it('should return the match', function(done) {
       movies.search('Batman Returns', function(err, results) {
         should.not.exist(err);
-        results.should.have.length(1);
+        results.should.have.length(2);
         results[0].id.should.eql(DIRECT.id);
         results[0].title.should.eql(DIRECT.title);
         results[0].ratings.should.eql(DIRECT.ratings);
@@ -31,7 +31,7 @@ describe('search()', function() {
     it('should return all matches', function(done) {
       movies.search('Batman', function(err, results) {
         should.not.exist(err);
-        results.should.have.length(33);
+        results.should.have.length(35);
         results[0].id.should.be.a('string');
         results[0].title.should.be.a('string');
         results[0].ratings.should.be.a('object');

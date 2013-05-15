@@ -8,7 +8,7 @@ var DIRECT = {
   title: 'Batman Returns',
   ratings: {
     critics_rating: 'Certified Fresh',
-    critics_score: 78,
+    critics_score: 81,
     audience_rating: 'Upright',
     audience_score: 68
   }
