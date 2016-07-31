@@ -15,22 +15,21 @@ Movie data includes:
 
 ## Installing
 
-```
-  $ npm install moduleName
+```bash
+  $ npm install tomatoes --save
 ```
 
 ## Using
 
 ```js
-
-var tomatoes = require('tomatoes');
-var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');  // API Key
+const tomatoes = require('tomatoes');
+const movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');  // API Key
 
 movies.search('Batman Begins', function(err, results) {
   // results: an Array of Objects with movie metadata
 });
 
-var id = '10598';
+const id = '10598';
 movies.get(id, function(err, result) {
   // result: an Object with movie metadata
 });
@@ -39,7 +38,7 @@ movies.get(id, function(err, result) {
 
 ## Testing
 
-```
+```bash
   $ make test
 ```
 
