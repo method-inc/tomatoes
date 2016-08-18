@@ -15,32 +15,28 @@ Movie data includes:
 
 ## Installing
 
-```
-  $ npm install moduleName
+```bash
+npm install --save moduleName
 ```
 
-## Using
+## Usage
 
 ```js
+// Search
+const tomatoes = require('tomatoes');
+const movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');  // API Key
 
-var tomatoes = require('tomatoes');
-var movies = tomatoes('6nkt9qb3ggxbd3ejyzsjvq3x');  // API Key
-
-movies.search('Batman Begins', function(err, results) {
+movies.search('Batman Begins', (err, results) => {
   // results: an Array of Objects with movie metadata
 });
 
-var id = '10598';
-movies.get(id, function(err, result) {
+// Find movie by id
+const id = '10598';
+
+movies.get(id, (err, result) => {
   // result: an Object with movie metadata
 });
 
-```
-
-## Testing
-
-```
-  $ make test
 ```
 
 ## The 'Movie' Object
